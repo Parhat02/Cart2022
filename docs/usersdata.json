@@ -1,0 +1,33 @@
+{
+  "users": [
+    {
+      "username": "testautomation1",
+      "password": "automation123!",
+      "usertype": "admin",
+      "age": 30,
+      "active": true
+    },
+    {
+      "username": "testautomation2",
+      "password": "automation123!",
+      "usertype": "admin",
+      "age": 25,
+      "active": true
+    },
+    {
+      "username": "testautomation3",
+      "password": "automation123!",
+      "usertype": "admin",
+      "age": 27,
+      "active": false
+    },
+    {
+      "username": "testautomation4",
+      "password": "automation123!",
+      "usertype": "admin",
+      "age": 28,
+      "active": false
+    }
+  ],
+  "application": "CubeCart"
+}

@@ -1,0 +1,21 @@
+{
+  "tests": [
+    {
+      "test-module": "Login",
+      "test-name": "Login",
+      "test-date": "2020-08-22",
+      "test-time": "10:14 AM",
+      "test-status": true
+    },
+    {
+      "test-module": "Inventory",
+      "test-name": "Add product",
+      "test-date": "2020-08-14",
+      "test-time": "10:15 AM",
+      "test-status": true
+    }
+  ],
+  "test-start-time": "10:14 AM",
+  "test-end-time": "10:17 AM",
+  "test-executed-by": "Selenium Master"
+}

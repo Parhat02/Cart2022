@@ -1,0 +1,15 @@
+Hello Tester
+Welcome to Selenium Master
+Java Tutorial
+File Reader
+Buffered Reader
+Using InputStreamReader to read a text file
+Use LineNumberReader example
+End of the file
+This is an example of random access file
+This is an example of random access file
+This is an example of random access file
+
+ This is an example of random access file
+
+ This is an example of random access file 

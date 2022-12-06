@@ -1,0 +1,21 @@
+{
+  "tests": [
+    {
+      "test-module": "Login",
+      "test-name": "Login",
+      "test-date": "2022-12-05",
+      "test-time": "23-10-31-024",
+      "test-status": true
+    },
+    {
+      "test-module": "Login",
+      "test-name": "Login",
+      "test-date": "2022-12-05",
+      "test-time": "23-10-36-584",
+      "test-status": true
+    }
+  ],
+  "test-start-time": "2022-12-05 23-10-30-658",
+  "test-end-time": "Mon Dec 05 23:10:40 TRT 2022",
+  "test-executed-by": "parha"
+}
