@@ -1,6 +1,6 @@
 package com.java.tutorial.exceltutorial;
 
-import com.java.tutorial.classtutorial.UserLogin;
+import com.java.tutorial.configutility.classtutorial.UserLogin;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;

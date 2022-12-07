@@ -1,6 +1,6 @@
 package com.java.tutorial.object;
 
-import com.java.tutorial.classtutorial.Car;
+import com.java.tutorial.configutility.classtutorial.Car;
 
 public class FunctionDemo {
     //void function does not return any value
