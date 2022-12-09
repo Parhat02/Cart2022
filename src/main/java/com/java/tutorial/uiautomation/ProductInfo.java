@@ -17,7 +17,7 @@ public class ProductInfo {
 
     }
 
-    ProductObject product1=new ProductObject("Ipad2222","Apple","New",productCode(),
+    public ProductObject product1=new ProductObject("Ipad2222","Apple","New",productCode(),
             "500","20","15","1","50","5","1500","Standard Tax");
     ProductObject product2=new ProductObject("Iphone142222","Apple","New",productCode(),
             "300","15","10","1","50","5","1400","Standard Tax");
