@@ -1,6 +1,6 @@
 package com.java.tutorial.uiautomation;
 
-import com.java.tutorial.configutility.classtutorial.UserLogin;
+import com.java.tutorial.classtutorial.UserLogin;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.joda.time.DateTime;
 import org.openqa.selenium.By;
