@@ -1,0 +1,24 @@
+<suite name="Suite1" verbose="1">
+    <test name="TestNG Demo Test" preserve-order="true">
+        <listeners>
+            <listener class-name="org.testng.reporters.EmailableReporter"/>
+        </listeners>
+
+         <groups>
+             <run>
+                 <include name="dummy test"></include>
+                 </run>
+         </groups>>
+
+        <classes>
+            <class name="com.selenium.integration.testframework.TestNGDemo"/>
+        </classes>
+    </test>
+
+    <test name="Regression All Test" preserve-order="true">
+        <classes>
+            <class name="com.selenium.integration.testframework.TestNGDemo"/>
+        </classes>
+    </test>
+
+</suite>
