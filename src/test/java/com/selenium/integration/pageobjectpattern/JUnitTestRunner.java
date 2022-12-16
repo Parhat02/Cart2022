@@ -37,7 +37,13 @@ public class JUnitTestRunner {
         ProductPage productPage=new ProductPage(driver);
         Assert.assertTrue(productPage.addNewProduct("Apple"+System.currentTimeMillis(),"New"));
     }
-
+    @Test
+    public void deleteProductTest(){
+        DashBoardPage dashBoardPage=new DashBoardPage(driver);
+        dashBoardPage.clickProductLink();
+        ProductPage productPage=new ProductPage(driver);
+        Assert.assertTrue(productPage.deleteTopProduct());
+    }
     @Test
     public void addCategoryTest(){
         CategoryPage categoryPage=new CategoryPage(driver);

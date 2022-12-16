@@ -1,7 +1,6 @@
 package com.selenium.integration.pageobjectpattern;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
@@ -19,6 +18,8 @@ public class ProductPage {
     WebElement saveButton;
     @FindBy(css="div.success")
     WebElement confirmationMessage;
+    @FindBy(xpath = "//div[@id=\"general\"]/table/tbody/tr/td/a/i[@class=\"fa fa-trash\"]")
+    WebElement deleteIcon;
     FunctionPage functionPage;
     //create a constructor ro initialize the page
     public ProductPage(WebDriver driver){
@@ -53,6 +54,20 @@ public class ProductPage {
         selectProductCondition(condition);
         clickSaveButton();
         return isConfirmationDisplayed();
+    }
+    public boolean deleteTopProduct(){
+        deleteIcon.click();
+        functionPage.waitUntilAlertIsPresent(timeout);
+        try {
+            Alert alert=driver.switchTo().alert();
+            alert.accept();
+        }catch (NoAlertPresentException e){
+            System.out.println(e.getMessage());
+        }
+        WebElement deleteConfirmation= driver.findElement(By.cssSelector("div.success"));
+        functionPage.waitUntilElementPresent(deleteConfirmation, timeout);
+        String confirmationMessage= deleteConfirmation.getText();
+        return confirmationMessage.contains("deleted");
     }
 
 }
