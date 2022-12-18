@@ -14,6 +14,7 @@ public class LoginPage {
     WebElement passwordField;
     @FindBy(id="login")
     WebElement loginButton;
+
     FunctionPage functionPage;
     //create constructor to initialize the page
     public LoginPage(WebDriver driver){
@@ -38,5 +39,14 @@ public class LoginPage {
         enterUsername(username);
         enterPassword(password);
         clickLoginButton();
+    }
+    public boolean multiLogin(String username, String password){
+        enterUsername(username);
+        enterPassword(password);
+        clickLoginButton();
+        DashBoardPage dashBoardPage=new DashBoardPage(driver);
+        boolean verifyLogin=dashBoardPage.isProductLinkDisplayed();
+        dashBoardPage.logout();
+        return verifyLogin;
     }
 }

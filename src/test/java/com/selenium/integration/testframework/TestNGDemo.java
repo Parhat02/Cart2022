@@ -25,7 +25,7 @@ public class TestNGDemo {
     public void setUp(){
         System.out.println("This code runs once the test class is instantiated");
     }
-    @Test
+    @Test(priority =1)
     public void loginTest(){
         DateFormat dateFormat=new SimpleDateFormat("yyyy/MM/dd HH:mm:ss:SSS");
         Date date=new Date();
@@ -33,7 +33,7 @@ public class TestNGDemo {
         System.out.println("This is login test");
         Assert.assertEquals(10,10);
     }
-    @Test
+    @Test(priority = 3)
     public void logoutTest(){
         DateFormat dateFormat=new SimpleDateFormat("yyyy/MM/dd HH:mm:ss:SSS");
         Date date=new Date();
@@ -41,7 +41,7 @@ public class TestNGDemo {
         System.out.println("This is logout test");
         Assert.assertTrue(Math.pow(10,2)==100);
     }
-    @Test(groups={"dummy test"})
+    @Test(groups={"dummy test"},priority = 2)
     public void ATest(){
         DateFormat dateFormat=new SimpleDateFormat("yyyy/MM/dd HH:mm:ss:SSS");
         Date date=new Date();
@@ -49,7 +49,7 @@ public class TestNGDemo {
         System.out.println("This is test A");
         Assert.assertTrue(Math.sqrt(9)==3);
     }
-    @Test(groups={"dummy test"})
+    @Test(dependsOnGroups = "dummy test",priority = 2)
     public void BTest(){
         DateFormat dateFormat=new SimpleDateFormat("yyyy/MM/dd HH:mm:ss:SSS");
         Date date=new Date();
@@ -57,7 +57,7 @@ public class TestNGDemo {
         System.out.println("This is test B");
         Assert.assertEquals("Selenium","Selenium");
     }
-    @Test(groups={"dummy test"})
+    @Test(dependsOnGroups = "dummy test",priority = 1)
     public void CTest(){
         DateFormat dateFormat=new SimpleDateFormat("yyyy/MM/dd HH:mm:ss:SSS");
         Date date=new Date();

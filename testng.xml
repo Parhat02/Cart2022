@@ -18,6 +18,19 @@
     <test name="Regression All Test" preserve-order="true">
         <classes>
             <class name="com.selenium.integration.testframework.TestNGDemo"/>
+            <class name="com.selenium.integration.testframework.TestNGDemo1"/>
+        </classes>
+    </test>
+
+    <test name="Data Provider Test">
+        <classes>
+            <class name="com.selenium.integration.testframework.DataProviderDemo"/>
+        </classes>
+    </test>
+
+    <test name="TestNG Test3">
+        <classes>
+            <class name="com.selenium.integration.testframework.TestNGDemo3"/>
         </classes>
     </test>
 
