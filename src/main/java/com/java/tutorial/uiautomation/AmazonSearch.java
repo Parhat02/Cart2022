@@ -6,13 +6,18 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+import java.util.Arrays;
 
 public class AmazonSearch {
     public static void main(String[] args) throws InterruptedException {
         //define driver--chromedriver
         WebDriverManager.chromedriver().setup();
+        ChromeOptions options=new ChromeOptions();
+        options.setExperimentalOption("excludeSwitches", Arrays.asList("enable-automation"));
         //define chrome driver object
-        WebDriver driver=new ChromeDriver();
+        WebDriver driver=new ChromeDriver(options);
         //open amazon home page
         driver.get("https://www.google.com/");
         //driver.navigate().to("https://www.amazon.com/");

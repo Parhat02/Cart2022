@@ -1,4 +1,4 @@
-<suite name="Suite1" verbose="1">
+<suite name="Suite1" verbose="1" parallel="tests" thread-count="2">
     <test name="TestNG Demo Test" preserve-order="true">
         <listeners>
             <listener class-name="org.testng.reporters.EmailableReporter"/>
@@ -7,11 +7,13 @@
          <groups>
              <run>
                  <include name="dummy test"></include>
-                 </run>
+             </run>
          </groups>>
 
         <classes>
             <class name="com.selenium.integration.testframework.TestNGDemo"/>
+            <class name="com.selenium.integration.api.ApiTestRunner"/>
+            <class name="com.selenium.integration.api.CubeCartRestAPITest"/>
         </classes>
     </test>
 

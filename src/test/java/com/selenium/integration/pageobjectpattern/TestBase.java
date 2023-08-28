@@ -14,7 +14,16 @@ public class TestBase {
         options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
         driver=new ChromeDriver(options);
         driver.manage().window().maximize();
-        driver.get("http://cubecartqa1.unitedcoderschool.com/admin_xrmx7f.php");
+        driver.get("http://cubecartuat.unitedcoderschool.com/admin_wehelc.php");
+    }
+    public void setUpBrowserInHeadlessMode(){
+        WebDriverManager.chromedriver().setup();
+        ChromeOptions options=new ChromeOptions();
+        options.addArguments("headless");
+        options.addArguments("window-size=1200,1100");
+        options.addArguments("disable-gpu");
+        driver=new ChromeDriver(options);
+        driver.get("http://cubecartuat.unitedcoderschool.com/admin_wehelc.php");
     }
     public void closeBrowser(){
         driver.close();

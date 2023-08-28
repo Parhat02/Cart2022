@@ -1,3 +1,4 @@
+@ApiTest
 Feature: an authorized user should be able to manage customers and products
 
   Scenario: an authorized user should be able to get all customers
@@ -10,7 +11,7 @@ Feature: an authorized user should be able to manage customers and products
       Given a valid username and password
       When the user sends a get request to the product end point
       Then the api should return 200 response code
-      And the api should return more than one customer
+      And the api should return more than one product
 
       Scenario Outline: an authorized user should be able to add multiple customers
         Given "<email>" and "<title>" and "<firstName>" and "<lastName>" and "<country>" and "<phone>" and "<status>" and "<language>" and "<ipaddress>" and "<registered>"

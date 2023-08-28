@@ -10,6 +10,7 @@ import java.time.LocalDateTime;
 import java.util.Date;
 import java.text.ParseException;
 import java.text.DateFormat;
+import java.util.Scanner;
 
 
 public class DateTimeDemo {
@@ -166,5 +167,14 @@ public class DateTimeDemo {
         System.out.println("London Time: "+londonTime);
 
 
+        Scanner scanner=new Scanner(System.in);
+        int month1=scanner.nextInt();
+        int day2=scanner.nextInt();
+        int year=scanner.nextInt();
+        String time=year+"-"+month1+"-"+day2;
+        DateTime date1=new DateTime(""+year+"-"+month1+"-"+day2);
+        DateTime.Property day7=date1.dayOfWeek();
+        String dayName2=day7.getAsText();
+        System.out.println(dayName2);
     }
 }

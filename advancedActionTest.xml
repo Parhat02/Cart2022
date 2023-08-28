@@ -1,0 +1,10 @@
+<suite name="Advanced Action Test" verbose="1">
+    <listeners>
+        <listener class-name="org.testng.reporters.EmailableReporter"/>
+    </listeners>
+    <test name="Advanced Action Test">
+        <classes>
+            <class name="com.selenium.integration.advancedaction.AdvancedActionTest"/>
+        </classes>
+    </test>
+</suite>

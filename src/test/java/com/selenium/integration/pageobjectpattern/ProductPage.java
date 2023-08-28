@@ -20,6 +20,8 @@ public class ProductPage {
     WebElement confirmationMessage;
     @FindBy(xpath = "//div[@id=\"general\"]/table/tbody/tr/td/a/i[@class=\"fa fa-trash\"]")
     WebElement deleteIcon;
+    @FindBy(linkText = "View All")
+    WebElement viewAllLink;
     FunctionPage functionPage;
     //create a constructor ro initialize the page
     public ProductPage(WebDriver driver){
@@ -69,5 +71,18 @@ public class ProductPage {
         String confirmationMessage= deleteConfirmation.getText();
         return confirmationMessage.contains("deleted");
     }
-
+    public boolean deleteProduct(String productName){
+        functionPage.waitUntilElementPresent(viewAllLink, timeout);
+        viewAllLink.click();
+        String productXpathToDelete=String.format("//tr/td/a[text()=\"%s\"]/following::td/a/i[@class=\"fa fa-trash\"]",productName);
+        WebElement productToDelete= driver.findElement(By.xpath(productXpathToDelete));
+        productToDelete.click();
+        functionPage.waitUntilAlertIsPresent(timeout);
+        Alert alert=driver.switchTo().alert();
+        alert.accept();
+        WebElement deleteConfirmation= driver.findElement(By.cssSelector("div.success"));
+        functionPage.waitUntilElementPresent(deleteConfirmation, timeout);
+        String confirmationMessage= deleteConfirmation.getText();
+        return confirmationMessage.contains("deleted");
+    }
 }

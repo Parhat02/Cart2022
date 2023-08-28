@@ -1,19 +1,18 @@
 package com.selenium.integration.testframework;
 
-import com.selenium.integration.pageobjectpattern.DashBoardPage;
 import com.selenium.integration.pageobjectpattern.LoginPage;
 import com.selenium.integration.pageobjectpattern.TestBase;
 import org.junit.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import org.testng.ITestContext;
+import org.testng.annotations.*;
 
+@Listeners(CustomResultListener.class)
 public class DataProviderDemo extends TestBase{
-
     @BeforeClass
-    public void setUp(){
+    public void setUp(ITestContext context){
+
         setUpBrowser();
+        context.setAttribute("driver", driver);
     }
     @Test(dataProvider = "loginData")
     public void loginTest(String username, String password){
@@ -23,6 +22,9 @@ public class DataProviderDemo extends TestBase{
     @AfterClass
     public void tearDown(){
         closeBrowser();
+        System.out.println("Total passed : "+CustomResultListener.passedTests.size());
+        System.out.println("Total failed : "+CustomResultListener.failedTests.size());
+        System.out.println("Total ignored : "+CustomResultListener.skippedTests.size());
     }
     @DataProvider
     public Object[][] loginData() {
